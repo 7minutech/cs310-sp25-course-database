@@ -11,7 +11,6 @@ public class DAOUtility {
     public static String getResultSetAsJson(ResultSet rs) {
         
         JsonArray records = new JsonArray();
-        JsonObject studentObj  = new JsonObject();
         String key,value;
         int columnCount;
         
@@ -25,11 +24,14 @@ public class DAOUtility {
             
             if (rs != null) {
                 while(rs.next()){
-                    studentObj.put("studentid",rs.getInt("studentid"));
-                    studentObj.put("termid",rs.getInt("termid"));
-                    studentObj.put("crn",rs.getInt("crn"));
+                    JsonObject studentObj  = new JsonObject();
+                    studentObj.put("studentid",rs.getString("studentid"));
+                    studentObj.put("termid",rs.getString("termid"));
+                    studentObj.put("crn",rs.getString("crn"));
                     records.add(studentObj);
+                    System.out.println(records.toString());
                 }
+
                 records.toString();
                 
             }
