@@ -29,9 +29,9 @@ public class DAOUtility {
                     studentObj.put("termid",rs.getString("termid"));
                     studentObj.put("crn",rs.getString("crn"));
                     records.add(studentObj);
-                    System.out.println(records.toString());
+                    
                 }
-
+                
                 records.toString();
                 
             }
